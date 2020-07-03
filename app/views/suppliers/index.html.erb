@@ -1,0 +1,30 @@
+<h1 class="subtitle is-2 has-text-centered my-1">Proveedores</h1>
+<div class="columns">
+    <div class="column"></div>
+    <div class="column is-half">
+        <i><%= link_to  "", new_supplier_path, class: "mdi mdi-plus-circle mdi-36px has-text-link" %></i>
+        <table class="table is-fullwidth is-bordered">
+            <thead text>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Telefono</th>
+                    <th colspan="2">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @proveedores.each do |proveedor|%>
+                <tr>
+                    <td><%= proveedor.nombre %></td>
+                    <td><%= proveedor.direccion %></td>
+                    <td><%= proveedor.telefono %></td>
+                    <td><i><%= link_to "", edit_supplier_path(proveedor), class: "mdi mdi-tooltip-edit mdi-36px has-text-success"%></i></td>
+                    <td><i><%= link_to "", supplier_path(proveedor), method: :delete, class: "mdi mdi-delete mdi-36px has-text-danger", data: {confirm: "¿Estás seguro de eliminar al proveedor: #{proveedor.nombre}?"}%></i></td>
+                <% end %>
+                </tr>
+            </tbody>
+        </table>
+        <%= will_paginate @proveedores, renderer: BulmaPagination::Rails, :previous_label => t("anterior"), :next_label => t("siguiente"), class: 'is-rounded is-centered' %>
+    </div>    
+    <div class="column"></div>
+</div>

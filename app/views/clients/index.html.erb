@@ -1,0 +1,29 @@
+<h1 class="subtitle is-2 has-text-centered my-1">Clientes</h1>
+<div class="columns">
+    <div class="column"></div>
+    <div class="column is-half">
+        <i><%= link_to  "", new_client_path, class: "mdi mdi-plus-circle mdi-36px has-text-link" %></i>
+        <table class="table is-fullwidth is-bordered">
+            <thead text>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Telefono</th>
+                    <th colspan="2">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @clientes.each do |cliente|%>
+                <tr>
+                    <td><%= cliente.nombre %></td>
+                    <td><%= cliente.direccion %></td>
+                    <td><%= cliente.telefono %></td>
+                    <td><i><%= link_to "", edit_client_path(cliente), class: "mdi mdi-tooltip-edit mdi-36px has-text-success"%></i></td>
+                    <td><i><%= link_to "", client_path(cliente), method: :delete, class: "mdi mdi-delete mdi-36px has-text-danger", data: {confirm: "¿Estás seguro de eliminar al cliente: #{cliente.nombre}?"}%></i></td>
+                <% end %>
+                </tr>
+            </tbody>
+        </table>
+    </div>    
+    <div class="column"></div>
+</div>

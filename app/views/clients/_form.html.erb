@@ -1,0 +1,38 @@
+<div class="columns">
+    <div class="column"></div>
+    <div class="column my-5 has-text-centered has-background-light">
+        <%= form_for @cliente do |f| %>
+        <div class="field">
+            <label class="label">Nombre</label>
+            <div class="control">
+                <%= f.text_field :nombre, autofocus: true, class: "input", autocomplete: "nombre"%>
+            </div>
+        </div> 
+
+        <div class="field">
+            <label class="label">Dirección</label>
+            <div class="control">
+                <%= f.text_field :direccion, autofocus: true, class: "input", autocomplete: "dirección"%>
+            </div>
+        </div>   
+
+        <div class="field">
+            <label class="label">Telefono</label>
+            <div class="control">
+                <%= f.text_field :telefono, autofocus: true, class: "input", autocomplete: "telefono"%>
+            </div>
+        </div> 
+
+        <hr >
+        <div class="field is-grouped">
+            <div class="control">
+                <%= f.submit(@cliente.new_record? ? "Crear" : "Actualizar", class: "button is-link")%>
+            </div>
+            <div class="control">
+                <%= link_to "Regresar", clients_path, class: "button is-link is-light" %>
+            </div>
+        </div>
+        <% end %>
+    </div>
+    <div class="column"></div>
+</div>

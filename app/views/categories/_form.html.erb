@@ -1,0 +1,30 @@
+<div class="columns">
+    <div class="column"></div>
+    <div class="column my-5 has-text-centered has-background-light">
+        <%= form_for @categoria do |f| %>
+        <div class="field">
+            <label class="label">Nombre</label>
+            <div class="control">
+                <%= f.text_field :nombre, autofocus: true, class: "input", autocomplete: "nombre"%>
+            </div>
+        </div> 
+
+        <div class="field">
+            <label class="label">Descripción</label>
+            <div class="control">
+                <%= f.text_area :descripcion, autofocus: true, class: "input", autocomplete: "descripcion"%>
+            </div>
+        </div>   
+        <hr >
+        <div class="field is-grouped">
+            <div class="control">
+                <%= f.submit(@categoria.new_record? ? "Crear" : "Actualizar", class: "button is-link")%>
+            </div>
+            <div class="control">
+                <%= link_to "Regresar", categories_path, class: "button is-link is-light" %>
+            </div>
+        </div>
+        <% end %>
+    </div>
+    <div class="column"></div>
+</div>

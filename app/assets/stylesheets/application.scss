@@ -1,0 +1,48 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "materialdesignicons";
+@import "bulma";
+
+.navbar-item{
+    text-decoration: none !important;
+    color: white !important;
+}
+.navbar-item:hover{
+    color: #363636 !important;
+    background-color: #76D7C4 !important;
+    transition: 0.5s;
+}
+
+.navbar-dropdown{
+    background-color: #363636 !important;
+}
+
+thead, tbody{
+    text-align: center;
+}
+
+.column{
+    text-align: center;
+}
+
+.column{
+    border-radius: 5px;
+}
+form{
+    
+    align-items: center !important;
+    justify-content: center !important; 
+}
